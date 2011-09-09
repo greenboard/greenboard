@@ -3,3 +3,5 @@
 .settings
 .springBeans
 target
+
+src/main/resources/forceDatabase.properties
