@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-package org.greenboard.controller;
-=======
 package com.greenboard.board;
->>>>>>> issue6
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
