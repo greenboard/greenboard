@@ -1,4 +1,4 @@
-package org.greenboard.controller;
+package com.greenboard.board;
 
 import javax.inject.Inject;
 
