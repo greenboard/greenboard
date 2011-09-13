@@ -5,8 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta charset="utf-8" />
 	<title>Greenboard</title>
-	<link href="${pageContext.request.contextPath}/resources/layout.css" rel="stylesheet" type="text/css" />
+	<link type="text/css" href="${pageContext.request.contextPath}/resources/css/cupertino/jquery-ui-1.8.16.custom.css" rel="stylesheet" />	
+	<script data-main="scripts/main" src="${pageContext.request.contextPath}/scripts/require-jquery.js"></script>
 </head>
 <body>
 	<div id="header"><div id="app_title">Greenboard</div></div>
