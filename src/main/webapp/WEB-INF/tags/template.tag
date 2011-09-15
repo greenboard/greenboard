@@ -7,7 +7,7 @@
 	<meta charset="utf-8" />
 	<title>Greenboard</title>
 	<link type="text/css" href="${pageContext.request.contextPath}/resources/css/cupertino/jquery-ui-1.8.16.custom.css" rel="stylesheet" />	
-	<script data-main="scripts/main" src="${pageContext.request.contextPath}/resources/scripts/require-jquery.js"></script>
+	<script data-main="${pageContext.request.contextPath}/resources/scripts/main" src="${pageContext.request.contextPath}/resources/scripts/require-jquery.js"></script>
 </head>
 <body>
 	<div id="header"><div id="app_title">Greenboard</div></div>
