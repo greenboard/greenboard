@@ -25,4 +25,15 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
+	<!-- etag filter to save bandwidth. would be nice to implement deep etags to save processing at a later date -->
+	<filter>
+		<filter-name>etagFilter</filter-name>
+   		<filter-class>org.springframework.web.filter.ShallowEtagHeaderFilter</filter-class>
+	</filter>
+		
+	<filter-mapping>
+		<filter-name>etagFilter</filter-name>
+		<servlet-name>appServlet</servlet-name>
+	</filter-mapping>
 </web-app>
