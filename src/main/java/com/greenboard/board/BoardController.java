@@ -30,9 +30,9 @@ public class BoardController {
 	
 	@RequestMapping(value="/boards", method=RequestMethod.GET)
 	public @ResponseBody List<String> getBoards() {
-	    ArrayList<String> boards = new ArrayList<String>();
+		ArrayList<String> boards = new ArrayList<String>();
 	    boards.add("board1");
-		return boards;
+	    return boards;
 	}
 
 }
