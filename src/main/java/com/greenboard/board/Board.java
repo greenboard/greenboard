@@ -1,6 +1,9 @@
 package com.greenboard.board;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 import org.springframework.util.Assert;
 
@@ -11,28 +14,35 @@ import org.springframework.util.Assert;
  * TODO Elaborate domain model around Boards (Private/Public boards), Cards and
  * Pins.
  * 
- * @author Anu
  * 
  */
 @Entity
 public class Board {
 
+	@Id
+	@GeneratedValue
+	@SuppressWarnings("unused")
+	private Long id;
+
+	@Column(nullable = false)
 	private String name;
+
+	@Column
 	private String description;
 
 	public Board(String name) {
 		Assert.notNull(name, "name cannot be null");
 		this.name = name;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
-	
+
 	public String getDescription() {
 		return description;
 	}
-	
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
