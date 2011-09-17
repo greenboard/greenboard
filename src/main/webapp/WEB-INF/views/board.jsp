@@ -3,8 +3,6 @@
 <%@ page session="false" %>
 
 <tags:template>
-	
 	<jsp:body>
 	</jsp:body>
-	
 </tags:template>

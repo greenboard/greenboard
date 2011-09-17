@@ -23,7 +23,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>/web/*</url-pattern>
 	</servlet-mapping>
 	
 	<!-- etag filter to save bandwidth. would be nice to implement deep etags to save processing at a later date -->

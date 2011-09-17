@@ -23,9 +23,8 @@ public class BoardController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/board", method = RequestMethod.GET)
-	public String home() {
-		logger.info("requesting home");
-		return "home";
+	public String getBoard() {
+		return "board";
 	}
 	
 	@RequestMapping(value="/boards", method=RequestMethod.GET)
