@@ -5,6 +5,7 @@
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
 	xsi:schemaLocation="
 			http://www.springframework.org/schema/mvc 
 			http://www.springframework.org/schema/mvc/spring-mvc.xsd
@@ -79,5 +80,8 @@
 			</props>
 		</property>
 	</bean>
+	
+	<jpa:repositories
+		base-package="com.greenboard" />
 	
 </beans>

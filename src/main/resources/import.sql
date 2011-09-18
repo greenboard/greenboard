@@ -1,1 +1,1 @@
-insert into Board(name) values ('Cheese board')
+insert into Board(name) values ('cheeseboard')
