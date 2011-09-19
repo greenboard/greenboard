@@ -4,5 +4,6 @@
 
 <tags:template>
 	<jsp:body>
+		Hello and welcome to the ${board.name eq null ? 'GreenBoard' : board.name}
 	</jsp:body>
 </tags:template>

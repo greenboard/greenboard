@@ -30,6 +30,14 @@ public class Board {
 	@Column
 	private String description;
 
+	/**
+	 * JPA Constructor.
+	 */
+	protected Board()
+	{
+		
+	}
+	
 	public Board(String name) {
 		Assert.notNull(name, "name cannot be null");
 		this.name = name;
