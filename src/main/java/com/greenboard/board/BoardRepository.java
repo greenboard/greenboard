@@ -1,5 +1,7 @@
 package com.greenboard.board;
 
+import java.util.List;
+
 import org.springframework.data.repository.Repository;
 
 /**
@@ -15,4 +17,12 @@ public interface BoardRepository extends Repository<Board, Long> {
 	 * @return a valid board for the given name or null if the board does not exist.
 	 */
 	public Board findByName(String name);
+	
+	
+	/**
+	 * Finds a list of all {@link Board}s in the repository.
+	 * 
+	 * @return A list of all boards, or an empty list if none exist.
+	 */
+	public List<Board> findAll();
 }

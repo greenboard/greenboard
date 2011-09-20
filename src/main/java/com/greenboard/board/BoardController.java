@@ -30,7 +30,7 @@ public class BoardController {
 	 */
 	@RequestMapping(value = "/board/{name}", method = RequestMethod.GET)
 	public String getBoard(@PathVariable String name, Model model) {
-
+		logger.info("finding board: "+ name);
 		Board board = boardRepository.findByName(name);
 		model.addAttribute("board", board);
 		return "board";
@@ -38,9 +38,9 @@ public class BoardController {
 
 	@RequestMapping(value = "/boards", method = RequestMethod.GET)
 	public @ResponseBody
-	List<String> getBoards() {
-		ArrayList<String> boards = new ArrayList<String>();
-		boards.add("board1");
+	List<Board> getBoards() {
+		logger.info("finding all boards");
+		List<Board> boards = boardRepository.findAll();
 		return boards;
 	}
 
