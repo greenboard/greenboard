@@ -5,8 +5,7 @@
 	version="2.5">
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/spring/servlet-context.xml
-					 classpath:app-context.xml</param-value>
+		<param-value>/WEB-INF/spring/servlet-context.xml</param-value>
 	</context-param>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
