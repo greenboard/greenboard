@@ -23,7 +23,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
-		<url-pattern>/web/*</url-pattern>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
 	<!-- etag filter to save bandwidth. would be nice to implement deep etags to save processing at a later date -->
@@ -36,4 +36,9 @@
 		<filter-name>etagFilter</filter-name>
 		<servlet-name>appServlet</servlet-name>
 	</filter-mapping>
+	
+	<mime-mapping>
+   		<extension>less</extension>
+   		<mime-type>text/css</mime-type>
+   	</mime-mapping>
 </web-app>

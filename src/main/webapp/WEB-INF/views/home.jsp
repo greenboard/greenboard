@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Greenboard</title>
-	<link rel="stylesheet/less" type="text/css" href="/greenboard/resources/css/greenboard.less">
-	<script type="text/javascript" src="/greenboard/resources/scripts/less-1.1.3.min.js"></script>
+	<link rel="stylesheet/less" type="text/css" href="resources/css/greenboard.less">
+	<script type="text/javascript" src="resources/scripts/less-1.1.3.min.js"></script>
 	<style type="text/css">
       body {
         padding-top: 60px;
