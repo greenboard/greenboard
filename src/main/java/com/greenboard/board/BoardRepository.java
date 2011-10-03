@@ -11,7 +11,7 @@ import org.springframework.data.repository.Repository;
 public interface BoardRepository extends Repository<Board, Long> {
 
 	/**
-	 * Finds a {@link Board} by its identifying name.
+	 * Finds a {@link Board} by its name identifier.
 	 * 
 	 * @param name the name of the board to be retrieved.
 	 * @return a valid board for the given name or null if the board does not exist.

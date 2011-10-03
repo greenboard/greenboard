@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xmlns:tx="http://www.springframework.org/schema/tx"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
-	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
 	xsi:schemaLocation="
 			http://www.springframework.org/schema/mvc 
 			http://www.springframework.org/schema/mvc/spring-mvc.xsd
@@ -20,44 +17,14 @@
 			http://www.springframework.org/schema/data/jpa
     		http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
-	<import resource="security-config.xml"/>
-	 
-	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
-	
-	<!-- Enables the Spring MVC @Controller programming model -->
-	<mvc:annotation-driven />
-	
-	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
-	<mvc:resources mapping="/resources/**" location="/resources/**" />
-	
-	<mvc:interceptors>
-		<bean class="org.springframework.web.servlet.mvc.WebContentInterceptor" >
-			<property name="cacheSeconds" value="0"/>
-	    	<property name="alwaysUseFullPath" value="true"/>
-	    	<property name="cacheMappings">
-	        	<props>
-	            	<!-- cache for one month -->
-	            	<prop key="/boards/**">10</prop>
-	            	<!-- don't set cache headers -->
-		            <prop key="/board/**">10</prop>
-		        </props>
-		    </property>
-		</bean>
-	</mvc:interceptors>
 
-	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/views/" />
-		<property name="suffix" value=".jsp" />
-	</bean>
-	
 	<context:component-scan base-package="com.greenboard" />
-	
+
 	<!-- Persistence config -->
 	<tx:annotation-driven />
-	
-	<jdbc:embedded-database id="dataSource" type="H2"/>
-	
+
+	<jdbc:embedded-database id="dataSource" type="H2" />
+
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
@@ -66,8 +33,7 @@
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<!-- don't bother with persistence.xml -->
-		<property name="packagesToScan"
-			value="com.greenboard" />
+		<property name="packagesToScan" value="com.greenboard" />
 		<property name="jpaVendorAdapter">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
 		</property>
@@ -80,8 +46,7 @@
 			</props>
 		</property>
 	</bean>
-	
-	<jpa:repositories
-		base-package="com.greenboard" />
-	
+
+	<jpa:repositories base-package="com.greenboard" />
+
 </beans>
