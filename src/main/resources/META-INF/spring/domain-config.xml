@@ -20,33 +20,24 @@
 
 	<context:component-scan base-package="com.greenboard" />
 
-	<!-- Persistence config -->
-	<tx:annotation-driven />
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+    	<constructor-arg name="mongo" ref="mongo"/>
+    	<constructor-arg name="databaseName" value="greenboard"/>
+    	<constructor-arg name="userCredentials" ref="userCredentials"/>
+    </bean>
+    
+    <bean id="userCredentials" class="org.springframework.data.authentication.UserCredentials">
+    	<constructor-arg name="username" value="greenboard"/>
+		<constructor-arg name="password" value="password"/>
+    </bean>
 
-	<jdbc:embedded-database id="dataSource" type="H2" />
-
-	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-		<property name="entityManagerFactory" ref="entityManagerFactory" />
-	</bean>
-
-	<bean id="entityManagerFactory"
-		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<property name="dataSource" ref="dataSource" />
-		<!-- don't bother with persistence.xml -->
-		<property name="packagesToScan" value="com.greenboard" />
-		<property name="jpaVendorAdapter">
-			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
-		</property>
-		<property name="jpaProperties">
-			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
-				<prop key="hibernate.hbm2ddl.auto">create-drop</prop>
-				<prop key="hibernate.show_sql">true</prop>
-				<prop key="hibernate.cache.provider_class">org.hibernate.cache.HashtableCacheProvider</prop>
-			</props>
-		</property>
-	</bean>
-
-	<jpa:repositories base-package="com.greenboard" />
-
+	<!-- Factory bean that creates the Mongo instance -->
+    <bean id="mongo" class="org.springframework.data.mongodb.core.MongoFactoryBean">
+    	<property name="host" value="staff.mongohq.com"/>
+    	<property name="port" value="10062"/>
+    </bean>
+    
+	<!-- Use this post processor to translate any MongoExceptions thrown in @Repository annotated classes -->
+	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+	
 </beans>

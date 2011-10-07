@@ -1,10 +1,7 @@
 package com.greenboard.board;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.util.Assert;
 
 /**
@@ -16,18 +13,15 @@ import org.springframework.util.Assert;
  * 
  * 
  */
-@Entity
+@Document
 public class Board {
 
 	@Id
-	@GeneratedValue
 	@SuppressWarnings("unused")
 	private Long id;
 
-	@Column(nullable = false)
 	private String name;
 
-	@Column
 	private String description;
 
 	/**
