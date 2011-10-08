@@ -13,12 +13,11 @@ import org.springframework.util.Assert;
  * 
  * 
  */
-@Document
+@Document(collection="boards")
 public class Board {
 
 	@Id
-	@SuppressWarnings("unused")
-	private Long id;
+	private String id;
 
 	private String name;
 

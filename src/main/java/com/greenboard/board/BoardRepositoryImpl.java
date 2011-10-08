@@ -34,4 +34,11 @@ public class BoardRepositoryImpl implements BoardRepository
 		return boards;
 	}
 
+	/**
+	 * @param mongoOperations the mongoOperations to set
+	 */
+	public void setMongoOperations(MongoOperations mongoOperations) {
+		this.mongoOperations = mongoOperations;
+	}
+
 }

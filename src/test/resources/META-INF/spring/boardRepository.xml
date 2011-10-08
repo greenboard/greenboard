@@ -37,7 +37,7 @@
 	<!-- Factory bean that creates the Mongo instance -->
     <bean id="mongo" class="org.springframework.data.mongodb.core.MongoFactoryBean">
     	<property name="host" value="staff.mongohq.com"/>
-    	<property name="port" value="10062"/>
+    	<property name="port" value="10083"/>
     </bean>
     
 	<!-- Use this post processor to translate any MongoExceptions thrown in @Repository annotated classes -->
