@@ -11,21 +11,32 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath*:META-INF/spring/boardRepository.xml"})
-public class BoardRepositoryTest {
+public class BoardRepositoryImplTest {
 
 	private static final String CHOPPINGBOARD = "choppingboard";
 	private static final String CHEESEBOARD = "cheeseboard";
+	@Autowired
+	private MongoOperations mongoOperations;
+
 	@Autowired
 	private BoardRepository boardRepository;
 	private Collection<String> allBoardNames;
 	
 	@Before
 	public void setUp() throws Exception {
+		
+		mongoOperations.dropCollection(Board.class);
+		Collection<Board> testData = new HashSet<Board>();
+		testData.add(new Board(CHOPPINGBOARD));
+		testData.add(new Board(CHEESEBOARD));
+		mongoOperations.insertAll(testData );
+		
 		allBoardNames = new HashSet<String>();
 		allBoardNames.add(CHEESEBOARD);
 		allBoardNames.add(CHOPPINGBOARD);

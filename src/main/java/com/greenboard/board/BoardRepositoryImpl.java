@@ -7,6 +7,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -23,7 +25,9 @@ public class BoardRepositoryImpl implements BoardRepository
 	 * @see com.greenboard.board.BoardRepository#findByName(java.lang.String)
 	 */
 	public Board findByName(String name) {
-		return null;
+		Query query = new Query(Criteria.where("name").is(name));
+		Board result = mongoOperations.findOne(query, Board.class);
+		return result;
 	}
 
 	/* (non-Javadoc)
