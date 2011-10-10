@@ -5,12 +5,14 @@ package com.greenboard.board;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 /**
  * @author adrianp
  *
  */
+@Service
 public class BoardServiceImpl implements BoardService {
 	@Autowired
 	private MongoOperations mongoOperations;
