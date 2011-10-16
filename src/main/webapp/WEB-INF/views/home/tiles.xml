@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+
+	<definition name="home" extends="page">
+		<put-attribute name="content" expression="/WEB-INF/views/home/home.jsp" />
+	</definition>
+	
+	<definition name="about" extends="page">
+		<put-attribute name="content" expression="/WEB-INF/views/home/about.jsp" />
+	</definition>
+	
+	<definition name="contact" extends="page">
+		<put-attribute name="content" expression="/WEB-INF/views/home/contact.jsp" />
+	</definition>
+
+</tiles-definitions>
