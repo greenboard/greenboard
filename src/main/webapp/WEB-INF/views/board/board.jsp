@@ -2,8 +2,6 @@
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags"%>
 <%@ page session="false"%>
 
-<tags:template>
-	<jsp:body>
-		Hello and welcome to the ${board.name eq null ? 'GreenBoard' : board.name}
-	</jsp:body>
-</tags:template>
+<div class="board">
+	Hello and welcome to the ${board.name eq null ? 'GreenBoard' : board.name}
+</div>
