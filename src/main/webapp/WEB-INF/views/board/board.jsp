@@ -4,8 +4,7 @@
 
 <div class="board">
 	Hello and welcome to the ${board.name eq null ? 'GreenBoard' : board.name}
-	<!-- TODO replace /greenboard/ with root context as a variable -->
-	<form action="/greenboard/board/new" method="POST" name="newBoard" id="newBoard" class="mainForm">
+	<form action="<c:url value="/board/new"/>" method="POST" name="newBoard" id="newBoard" class="mainForm">
 		<input type="text" name="name" id="name" placeholder="Enter the boards name">
 		<input type="text" name="description" id="description" placeholder="Enter a description for the new board">
 		<input type="submit" name="submit" id="submit">
