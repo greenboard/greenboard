@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
  *
  */
 @Repository
-public class BoardRepositoryImpl implements BoardRepository 
+public class MongoBoardRepository implements BoardRepository 
 {
 	@Autowired
 	private MongoOperations mongoOperations;

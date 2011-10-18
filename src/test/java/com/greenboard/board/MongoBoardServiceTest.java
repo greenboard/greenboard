@@ -22,10 +22,10 @@ import org.springframework.data.mongodb.core.MongoOperations;
  *
  */
 @RunWith(MockitoJUnitRunner.class)
-public class BoardServiceImplTest extends BoardServiceImpl {
+public class MongoBoardServiceTest extends MongoBoardService {
 	
 	@InjectMocks
-	private BoardServiceImpl boardService = new BoardServiceImpl();
+	private MongoBoardService boardService = new MongoBoardService();
 	
 	@Mock
 	private MongoOperations mongoOperations;
