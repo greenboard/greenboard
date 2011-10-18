@@ -13,7 +13,7 @@ import org.springframework.util.Assert;
  *
  */
 @Service
-public class BoardServiceImpl implements BoardService {
+public class MongoBoardService implements BoardService {
 	@Autowired
 	private MongoOperations mongoOperations;
 
