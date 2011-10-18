@@ -13,13 +13,13 @@ import org.springframework.data.mongodb.core.MongoOperations;
 import com.greenboard.board.Board;
 
 @RunWith(MockitoJUnitRunner.class)
-public class MongoConfigurationServiceImplTest extends MongoConfigurationServiceImpl {
+public class MongoConfigurationServiceTest extends MongoConfigurationService {
 
 	@Mock
 	private MongoOperations mongoOperations;
 	
 	@InjectMocks
-	private MongoConfigurationServiceImpl service = new MongoConfigurationServiceImpl();
+	private MongoConfigurationService service = new MongoConfigurationService();
 
 	@Test
 	public void shouldCreateBoardCollection() {

@@ -17,7 +17,7 @@ import javax.annotation.PostConstruct;
  *
  */
 @Service
-public class MongoConfigurationServiceImpl {
+public class MongoConfigurationService {
 	@Autowired
 	private MongoOperations mongoOperations;
 
