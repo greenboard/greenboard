@@ -113,18 +113,6 @@ public class BoardServiceImplTest extends BoardServiceImpl {
 		assertEquals("Unexpected name in board returned", name, result.getName());
 		assertEquals("Unexpected description in board returned", desc, result.getDescription());
 	}
-	
-	@Test
-	public void shouldCreateCollectionIfItDoesNotExist() {
-		// given that the board collection does not yet exist
-		BDDMockito.given(mongoOperations.collectionExists(Board.class)).willReturn(false);
-		
-		// when createNewBoard is invoked with valid values
-		boardService.createNewBoard("name", "description");
-		
-		// then the board collection should be created
-		Mockito.verify(mongoOperations).createCollection(Board.class);
-	}
 
 	@Test
 	public void shouldNotCreateCollectionIfItAlreadyExists() {

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 /**
+ * Board Service used to create new boards
  * @author adrianp
  *
  */
@@ -23,7 +24,6 @@ public class BoardServiceImpl implements BoardService {
 	public Board createNewBoard(String name, String description) {
 		Assert.hasText(name, "name should not be blank");
 		Assert.hasText(description, "description should not be blank");
-		ensureCollectionExists();
 		
 		Board board = new Board(name);
 		board.setDescription(description);
@@ -33,13 +33,7 @@ public class BoardServiceImpl implements BoardService {
 		return board;
 	}
 
-	private void ensureCollectionExists() {
-		if (!mongoOperations.collectionExists(Board.class))
-		{
-			mongoOperations.createCollection(Board.class);
-		}
-	}
-
+	
 	/**
 	 * @param mongoOperations the mongoOperations to set
 	 */
